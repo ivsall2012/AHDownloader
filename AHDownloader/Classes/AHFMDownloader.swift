@@ -163,7 +163,7 @@ public class AHDownloader {
             self.checkDelegateContainers()
             let tempPath = AHDataTaskManager.getTaskTempFilePath(url)
             for container in self.delegateContainers {
-                container.delegate?.downloaderDidUpdate(url: url, FileSize: fileSize)
+                container.delegate?.downloaderDidUpdate(url: url, fileSize: fileSize)
                 
                 if tempPath != nil {
                     container.delegate?.downloaderDidUpdate(url: url, unfinishedLocalPath: tempPath!)
