@@ -53,7 +53,7 @@ extension AHDownloaderDelegate {
     public func downloaderWillStartDownload(url:String){}
     public func downloaderDidStartDownload(url:String){}
     public func downloaderDidUpdate(url:String, progress:Double){}
-    public func downloaderDidUpdate(url:String, FileSize:UInt64){}
+    public func downloaderDidUpdate(url:String, fileSize:UInt64){}
     public func downloaderDidUpdate(url: String, unfinishedLocalPath: String){}
     public func downloaderDidFinishDownload(url:String, localFilePath: String){}
     public func downloaderDidPaused(url: String){}
