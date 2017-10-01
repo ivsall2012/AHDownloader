@@ -53,7 +53,7 @@ extension AHDownloaderDelegate {
     public func downloaderWillStartDownload(url:String){}
     public func downloaderDidStartDownload(url:String){}
     public func downloaderDidUpdate(url:String, progress:Double){}
-    public func downloaderDidUpdate(url:String, fileSize:UInt64){}
+    public func downloaderDidUpdate(url:String, fileSize:Int){}
     public func downloaderDidUpdate(url: String, unfinishedLocalPath: String){}
     public func downloaderDidFinishDownload(url:String, localFilePath: String){}
     public func downloaderDidPaused(url: String){}
@@ -162,8 +162,9 @@ public class AHDownloader {
         AHDataTaskManager.donwload(fileName: fileName, url: url, fileSizeCallback: { (fileSize) in
             self.checkDelegateContainers()
             let tempPath = AHDataTaskManager.getTaskTempFilePath(url)
+            let size = Int(fileSize)
             for container in self.delegateContainers {
-                container.delegate?.downloaderDidUpdate(url: url, fileSize: fileSize)
+                container.delegate?.downloaderDidUpdate(url: url, fileSize: size)
                 
                 if tempPath != nil {
                     container.delegate?.downloaderDidUpdate(url: url, unfinishedLocalPath: tempPath!)
