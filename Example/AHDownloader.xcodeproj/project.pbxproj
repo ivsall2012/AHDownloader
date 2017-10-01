@@ -271,10 +271,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AHDownloader_Example/Pods-AHDownloader_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AHDownloadTool/AHDownloadTool.framework",
 				"${BUILT_PRODUCTS_DIR}/AHDownloader/AHDownloader.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AHDownloadTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AHDownloader.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

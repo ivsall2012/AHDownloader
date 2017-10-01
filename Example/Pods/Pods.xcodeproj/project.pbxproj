@@ -1,0 +1,941 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		024233D8F288C7A709B25311C02EBABB /* Pods-AHDownloader_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEEF7511BD395A968374E3C02FDD7B0 /* Pods-AHDownloader_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092AC14303326ED52EAE7AAA2713E58A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2534D3220551CEB4AEDB9B53B97E403 /* Foundation.framework */; };
+		30CB6A76261C11165B115D22539D2C66 /* AHFMDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965894B693BC40A7B51009257D4B6F4E /* AHFMDownloader.swift */; };
+		3B9ECE8F42F481F13C3AB12E87137BCB /* AHDownloadTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7CC0C855C1CF4BBD840223ED3537E9 /* AHDownloadTool.framework */; };
+		55FFBF89B7BFB8C54BEC5556283F4CD6 /* AHDataTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433274DFE7173020FCF4CF29493C9B59 /* AHDataTaskManager.swift */; };
+		5B835E6C031F49FAD04D60FF45AFF7F5 /* AHDownloader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2080B5F28420FF6DBDF02E8F83E4BCBE /* AHDownloader-dummy.m */; };
+		5BFB9E97D766A37D425209138F9BD8BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2534D3220551CEB4AEDB9B53B97E403 /* Foundation.framework */; };
+		6B4EB201C1D9E4CF78180791A2E1F202 /* AHDownloadTool-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C59DE470C59F83ABA54596639E1B415 /* AHDownloadTool-dummy.m */; };
+		7F7C5CB62AC3D33841BA05D9AD855485 /* AHDownloadTool-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B5F4BAB5F3C30B70EB6E7DC82AA4CA /* AHDownloadTool-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A8C1EAFEA144C2A779539E51E97ACEC /* Pods-AHDownloader_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DEB0C6B77FFFC39F5F98A14406E7100 /* Pods-AHDownloader_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9E208EC369442ED1580E4E13A3E230C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2534D3220551CEB4AEDB9B53B97E403 /* Foundation.framework */; };
+		AB6EE104557A203C0067574E5E37E81A /* AHDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1EF3D88D2A050F98F1AC0958543E85 /* AHDataTask.swift */; };
+		B1A0A18007D518CD16F49CB8FE77F45D /* AHFileTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2E76D8F1F171D52C3273D87A46A08 /* AHFileTool.swift */; };
+		BB7AF0DF53B5FCF05BF843E1DD3B7E7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2534D3220551CEB4AEDB9B53B97E403 /* Foundation.framework */; };
+		C05B513BB2FFAE356CC695AB4F063D48 /* Pods-AHDownloader_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBE3D9C2D13BF7315A3F81A6FEE71F2 /* Pods-AHDownloader_Tests-dummy.m */; };
+		C30757A61C95D68EA3F0EF8F766B2C84 /* Pods-AHDownloader_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93480A3ACFDBA0C03FA65CED2FEE1D03 /* Pods-AHDownloader_Example-dummy.m */; };
+		E4E2E91ED0D5776E1D1C482B6A55AE74 /* AHDownloader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47C766E086928CAA00DFA327A8C1E745 /* AHDownloader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB4340E699416A57C931745A869D7A92 /* AHFileSizeProbe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546E96FEF7F5654C49B103E53F52A16 /* AHFileSizeProbe.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		405AACBD7ECC0BBB770348AB32CE7167 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BE4BF7D44C741CC43FDE1FB7CF9CD35;
+			remoteInfo = AHDownloader;
+		};
+		74771B3334B1E9C3CEF544F328753F38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1ECD7AC665E478DD61ED81B49C0983B;
+			remoteInfo = AHDownloadTool;
+		};
+		F74A71523EF0732762A6D8D5EA0288E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1ECD7AC665E478DD61ED81B49C0983B;
+			remoteInfo = AHDownloadTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		015804164C1000882F83ABA99F470134 /* Pods-AHDownloader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AHDownloader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0C7CC0C855C1CF4BBD840223ED3537E9 /* AHDownloadTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AHDownloadTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CC71D9F2EACD48F705D3A2BAD1A0114 /* Pods-AHDownloader_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AHDownloader_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F1EF3D88D2A050F98F1AC0958543E85 /* AHDataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AHDataTask.swift; path = AHDownloadTool/Classes/AHDataTask.swift; sourceTree = "<group>"; };
+		105B535738FAC365939D43CE851E17A4 /* Pods-AHDownloader_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AHDownloader_Tests.modulemap"; sourceTree = "<group>"; };
+		157E86D5A9F720D4DADF8AD5C147F551 /* Pods-AHDownloader_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AHDownloader_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		1B693EDE22FDCB3D854B69AE3631C790 /* Pods-AHDownloader_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AHDownloader_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2080B5F28420FF6DBDF02E8F83E4BCBE /* AHDownloader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AHDownloader-dummy.m"; sourceTree = "<group>"; };
+		303322E6AE5B28A3ABA4B29553AA1E5E /* Pods-AHDownloader_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AHDownloader_Example-resources.sh"; sourceTree = "<group>"; };
+		35C0D6F69A93D136200E96A2BE417FC9 /* Pods-AHDownloader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AHDownloader_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		3C7AB1900B6DD4132238F448275F1FE6 /* AHDownloadTool-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AHDownloadTool-prefix.pch"; sourceTree = "<group>"; };
+		3DED594B4EBAF074C67F2654988899F6 /* AHDownloader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AHDownloader-prefix.pch"; sourceTree = "<group>"; };
+		433274DFE7173020FCF4CF29493C9B59 /* AHDataTaskManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AHDataTaskManager.swift; path = AHDownloadTool/Classes/AHDataTaskManager.swift; sourceTree = "<group>"; };
+		45BB3E71CEE51FA72A5070EBE28B4B75 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47C766E086928CAA00DFA327A8C1E745 /* AHDownloader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AHDownloader-umbrella.h"; sourceTree = "<group>"; };
+		528694EE252C70F72790EEE66810A791 /* AHDownloadTool.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AHDownloadTool.xcconfig; sourceTree = "<group>"; };
+		59B5F4BAB5F3C30B70EB6E7DC82AA4CA /* AHDownloadTool-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AHDownloadTool-umbrella.h"; sourceTree = "<group>"; };
+		651DA9372E962354B90E9BB1186D3415 /* Pods-AHDownloader_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AHDownloader_Example.modulemap"; sourceTree = "<group>"; };
+		700EF2F3A6C5548F075E8BE02BEB680C /* Pods-AHDownloader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AHDownloader_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7C59DE470C59F83ABA54596639E1B415 /* AHDownloadTool-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AHDownloadTool-dummy.m"; sourceTree = "<group>"; };
+		7DEB0C6B77FFFC39F5F98A14406E7100 /* Pods-AHDownloader_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AHDownloader_Example-umbrella.h"; sourceTree = "<group>"; };
+		7E62DEDBECE1153F56A223017E6AD81D /* Pods-AHDownloader_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AHDownloader_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		860A4856A0DF5CFCC689EF0B8715FDEA /* Pods-AHDownloader_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AHDownloader_Example-frameworks.sh"; sourceTree = "<group>"; };
+		93480A3ACFDBA0C03FA65CED2FEE1D03 /* Pods-AHDownloader_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AHDownloader_Example-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		965894B693BC40A7B51009257D4B6F4E /* AHFMDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AHFMDownloader.swift; sourceTree = "<group>"; };
+		99E2E76D8F1F171D52C3273D87A46A08 /* AHFileTool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AHFileTool.swift; path = AHDownloadTool/Classes/AHFileTool.swift; sourceTree = "<group>"; };
+		A32E3FBFB9FB3314B714DB30ECA7ABE9 /* Pods_AHDownloader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AHDownloader_Example.framework; path = "Pods-AHDownloader_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A546E96FEF7F5654C49B103E53F52A16 /* AHFileSizeProbe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AHFileSizeProbe.swift; path = AHDownloadTool/Classes/AHFileSizeProbe.swift; sourceTree = "<group>"; };
+		A764A148A2E4023CDD7423F6B5920FC8 /* AHDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AHDownloader.framework; path = AHDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9417ADA5883AEB68C282E94CFFC3436 /* AHDownloader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AHDownloader.modulemap; sourceTree = "<group>"; };
+		AEEEF7511BD395A968374E3C02FDD7B0 /* Pods-AHDownloader_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AHDownloader_Tests-umbrella.h"; sourceTree = "<group>"; };
+		AFBE3D9C2D13BF7315A3F81A6FEE71F2 /* Pods-AHDownloader_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AHDownloader_Tests-dummy.m"; sourceTree = "<group>"; };
+		AFE730AD406CB9EFB8A949299064CC8D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B15ACD5D958844C01C3968A6D7FA5733 /* Pods-AHDownloader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AHDownloader_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B7AA749010E4594E8874689A21EB7D33 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD44289CA9A0B82F05B8EDE38BE3231F /* Pods-AHDownloader_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AHDownloader_Tests-resources.sh"; sourceTree = "<group>"; };
+		BE33EEEC8745B2A3B5A3F0C291A2FFA4 /* AHDownloadTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AHDownloadTool.framework; path = AHDownloadTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF81F1BB778BB9AAD90D6BCAFC7D062B /* AHDownloader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AHDownloader.xcconfig; sourceTree = "<group>"; };
+		CA06C8A1F6FC5485395BC92ED702DB6B /* Pods_AHDownloader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AHDownloader_Tests.framework; path = "Pods-AHDownloader_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE2A6C3D729572FB39933A66054CE7FA /* AHDownloadTool.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AHDownloadTool.modulemap; sourceTree = "<group>"; };
+		DF795ACBA3D6D7AE3C273712C23A2741 /* Pods-AHDownloader_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AHDownloader_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EF2C616FF2D2D3821854E1D2CE37F5CE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2534D3220551CEB4AEDB9B53B97E403 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5155B190D24B3A2907EA0A54E450206E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9E208EC369442ED1580E4E13A3E230C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB88926A3164AE81B6C2C33357F17BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BFB9E97D766A37D425209138F9BD8BE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D17F63D31D31464C737D4DD20A9F1578 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B9ECE8F42F481F13C3AB12E87137BCB /* AHDownloadTool.framework in Frameworks */,
+				092AC14303326ED52EAE7AAA2713E58A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA7B081491DB7DA295CA6760FD679FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB7AF0DF53B5FCF05BF843E1DD3B7E7C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C08A6EAA36858555B59105CE00782F1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F2534D3220551CEB4AEDB9B53B97E403 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		0DC7ADA7492F4A90381581FD52627F5B /* AHDownloadTool */ = {
+			isa = PBXGroup;
+			children = (
+				0F1EF3D88D2A050F98F1AC0958543E85 /* AHDataTask.swift */,
+				433274DFE7173020FCF4CF29493C9B59 /* AHDataTaskManager.swift */,
+				A546E96FEF7F5654C49B103E53F52A16 /* AHFileSizeProbe.swift */,
+				99E2E76D8F1F171D52C3273D87A46A08 /* AHFileTool.swift */,
+				1F3E70CBC0BD3B79F7FAB6C87223B4E0 /* Support Files */,
+			);
+			name = AHDownloadTool;
+			path = AHDownloadTool;
+			sourceTree = "<group>";
+		};
+		1F3E70CBC0BD3B79F7FAB6C87223B4E0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE2A6C3D729572FB39933A66054CE7FA /* AHDownloadTool.modulemap */,
+				528694EE252C70F72790EEE66810A791 /* AHDownloadTool.xcconfig */,
+				7C59DE470C59F83ABA54596639E1B415 /* AHDownloadTool-dummy.m */,
+				3C7AB1900B6DD4132238F448275F1FE6 /* AHDownloadTool-prefix.pch */,
+				59B5F4BAB5F3C30B70EB6E7DC82AA4CA /* AHDownloadTool-umbrella.h */,
+				AFE730AD406CB9EFB8A949299064CC8D /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AHDownloadTool";
+			sourceTree = "<group>";
+		};
+		1F919147CBF5BEC84AB370B6081E7D30 /* AHDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FA463F31982E6F4DF53A89B6AC2A7 /* AHDownloader */,
+				7493F1EC4B82E630A740D0FA3866B86F /* Support Files */,
+			);
+			name = AHDownloader;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		48D268E5DD662092956E84AFD6116429 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DC7ADA7492F4A90381581FD52627F5B /* AHDownloadTool */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		611418C82DB22DDBCB25E32A4231721E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A764A148A2E4023CDD7423F6B5920FC8 /* AHDownloader.framework */,
+				BE33EEEC8745B2A3B5A3F0C291A2FFA4 /* AHDownloadTool.framework */,
+				A32E3FBFB9FB3314B714DB30ECA7ABE9 /* Pods_AHDownloader_Example.framework */,
+				CA06C8A1F6FC5485395BC92ED702DB6B /* Pods_AHDownloader_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7493F1EC4B82E630A740D0FA3866B86F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9417ADA5883AEB68C282E94CFFC3436 /* AHDownloader.modulemap */,
+				BF81F1BB778BB9AAD90D6BCAFC7D062B /* AHDownloader.xcconfig */,
+				2080B5F28420FF6DBDF02E8F83E4BCBE /* AHDownloader-dummy.m */,
+				3DED594B4EBAF074C67F2654988899F6 /* AHDownloader-prefix.pch */,
+				47C766E086928CAA00DFA327A8C1E745 /* AHDownloader-umbrella.h */,
+				45BB3E71CEE51FA72A5070EBE28B4B75 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AHDownloader";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				D095DEFF83D58A85E1944E95DB8C2CE2 /* Development Pods */,
+				EA435ACA74556731E21F056316677638 /* Frameworks */,
+				48D268E5DD662092956E84AFD6116429 /* Pods */,
+				611418C82DB22DDBCB25E32A4231721E /* Products */,
+				830BDB6C4EABB32285BA04996F348A72 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		830BDB6C4EABB32285BA04996F348A72 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3E88BB3A12BBDF66DF77F60BCAD1302 /* Pods-AHDownloader_Example */,
+				DD97AE360D75704E4A0594F50F65D55F /* Pods-AHDownloader_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CD8FA463F31982E6F4DF53A89B6AC2A7 /* AHDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				D3BB9FED0E2F0839AD47A5C8FE141261 /* Classes */,
+			);
+			name = AHDownloader;
+			path = AHDownloader;
+			sourceTree = "<group>";
+		};
+		D095DEFF83D58A85E1944E95DB8C2CE2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F919147CBF5BEC84AB370B6081E7D30 /* AHDownloader */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D3BB9FED0E2F0839AD47A5C8FE141261 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				965894B693BC40A7B51009257D4B6F4E /* AHFMDownloader.swift */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DD97AE360D75704E4A0594F50F65D55F /* Pods-AHDownloader_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EF2C616FF2D2D3821854E1D2CE37F5CE /* Info.plist */,
+				105B535738FAC365939D43CE851E17A4 /* Pods-AHDownloader_Tests.modulemap */,
+				DF795ACBA3D6D7AE3C273712C23A2741 /* Pods-AHDownloader_Tests-acknowledgements.markdown */,
+				1B693EDE22FDCB3D854B69AE3631C790 /* Pods-AHDownloader_Tests-acknowledgements.plist */,
+				AFBE3D9C2D13BF7315A3F81A6FEE71F2 /* Pods-AHDownloader_Tests-dummy.m */,
+				7E62DEDBECE1153F56A223017E6AD81D /* Pods-AHDownloader_Tests-frameworks.sh */,
+				BD44289CA9A0B82F05B8EDE38BE3231F /* Pods-AHDownloader_Tests-resources.sh */,
+				AEEEF7511BD395A968374E3C02FDD7B0 /* Pods-AHDownloader_Tests-umbrella.h */,
+				0CC71D9F2EACD48F705D3A2BAD1A0114 /* Pods-AHDownloader_Tests.debug.xcconfig */,
+				35C0D6F69A93D136200E96A2BE417FC9 /* Pods-AHDownloader_Tests.release.xcconfig */,
+			);
+			name = "Pods-AHDownloader_Tests";
+			path = "Target Support Files/Pods-AHDownloader_Tests";
+			sourceTree = "<group>";
+		};
+		E3E88BB3A12BBDF66DF77F60BCAD1302 /* Pods-AHDownloader_Example */ = {
+			isa = PBXGroup;
+			children = (
+				B7AA749010E4594E8874689A21EB7D33 /* Info.plist */,
+				651DA9372E962354B90E9BB1186D3415 /* Pods-AHDownloader_Example.modulemap */,
+				015804164C1000882F83ABA99F470134 /* Pods-AHDownloader_Example-acknowledgements.markdown */,
+				157E86D5A9F720D4DADF8AD5C147F551 /* Pods-AHDownloader_Example-acknowledgements.plist */,
+				93480A3ACFDBA0C03FA65CED2FEE1D03 /* Pods-AHDownloader_Example-dummy.m */,
+				860A4856A0DF5CFCC689EF0B8715FDEA /* Pods-AHDownloader_Example-frameworks.sh */,
+				303322E6AE5B28A3ABA4B29553AA1E5E /* Pods-AHDownloader_Example-resources.sh */,
+				7DEB0C6B77FFFC39F5F98A14406E7100 /* Pods-AHDownloader_Example-umbrella.h */,
+				B15ACD5D958844C01C3968A6D7FA5733 /* Pods-AHDownloader_Example.debug.xcconfig */,
+				700EF2F3A6C5548F075E8BE02BEB680C /* Pods-AHDownloader_Example.release.xcconfig */,
+			);
+			name = "Pods-AHDownloader_Example";
+			path = "Target Support Files/Pods-AHDownloader_Example";
+			sourceTree = "<group>";
+		};
+		EA435ACA74556731E21F056316677638 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C7CC0C855C1CF4BBD840223ED3537E9 /* AHDownloadTool.framework */,
+				0C08A6EAA36858555B59105CE00782F1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		220E58D19038E3C8420512DCE2A3F857 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F7C5CB62AC3D33841BA05D9AD855485 /* AHDownloadTool-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		490DC04293C5B30B0BFA8B6F1AF45FAE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				024233D8F288C7A709B25311C02EBABB /* Pods-AHDownloader_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A92EFEC26B952B345F02D64C460800C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A8C1EAFEA144C2A779539E51E97ACEC /* Pods-AHDownloader_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F564FC7C7632C55331937629B5E94FEC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4E2E91ED0D5776E1D1C482B6A55AE74 /* AHDownloader-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7BE4BF7D44C741CC43FDE1FB7CF9CD35 /* AHDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B53DB10D0A64BB8079B3763606990A5E /* Build configuration list for PBXNativeTarget "AHDownloader" */;
+			buildPhases = (
+				F4AF10816F42A87A4A0A3AE73983C460 /* Sources */,
+				D17F63D31D31464C737D4DD20A9F1578 /* Frameworks */,
+				F564FC7C7632C55331937629B5E94FEC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB8CAABF3ACC32B6FE95E9FA29B20AD3 /* PBXTargetDependency */,
+			);
+			name = AHDownloader;
+			productName = AHDownloader;
+			productReference = A764A148A2E4023CDD7423F6B5920FC8 /* AHDownloader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		90AB92F1749C99337028705E6C557537 /* Pods-AHDownloader_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1A176D895E22F70B66F80CFBF1914C /* Build configuration list for PBXNativeTarget "Pods-AHDownloader_Tests" */;
+			buildPhases = (
+				94C31DDCE4C8FC37E9239D02B71DA092 /* Sources */,
+				5155B190D24B3A2907EA0A54E450206E /* Frameworks */,
+				490DC04293C5B30B0BFA8B6F1AF45FAE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-AHDownloader_Tests";
+			productName = "Pods-AHDownloader_Tests";
+			productReference = CA06C8A1F6FC5485395BC92ED702DB6B /* Pods_AHDownloader_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ADF825925F66E8F64EDEA07CBE6F2550 /* Pods-AHDownloader_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E8DC7D754405A2E05101A81CCD02CE1 /* Build configuration list for PBXNativeTarget "Pods-AHDownloader_Example" */;
+			buildPhases = (
+				1EE64E7CD0B80752A24C962CC242C540 /* Sources */,
+				5AB88926A3164AE81B6C2C33357F17BE /* Frameworks */,
+				9A92EFEC26B952B345F02D64C460800C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E66A4D008FCF0B2C1FA5A9B132AF70ED /* PBXTargetDependency */,
+				C87D22619185F6ADFAB7CD1CD119B9F4 /* PBXTargetDependency */,
+			);
+			name = "Pods-AHDownloader_Example";
+			productName = "Pods-AHDownloader_Example";
+			productReference = A32E3FBFB9FB3314B714DB30ECA7ABE9 /* Pods_AHDownloader_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F1ECD7AC665E478DD61ED81B49C0983B /* AHDownloadTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB000F7C17F7E814988B8CB3B4911EB8 /* Build configuration list for PBXNativeTarget "AHDownloadTool" */;
+			buildPhases = (
+				6B8263717EE5CF4DDA14D18916044516 /* Sources */,
+				EBA7B081491DB7DA295CA6760FD679FB /* Frameworks */,
+				220E58D19038E3C8420512DCE2A3F857 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AHDownloadTool;
+			productName = AHDownloadTool;
+			productReference = BE33EEEC8745B2A3B5A3F0C291A2FFA4 /* AHDownloadTool.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 611418C82DB22DDBCB25E32A4231721E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BE4BF7D44C741CC43FDE1FB7CF9CD35 /* AHDownloader */,
+				F1ECD7AC665E478DD61ED81B49C0983B /* AHDownloadTool */,
+				ADF825925F66E8F64EDEA07CBE6F2550 /* Pods-AHDownloader_Example */,
+				90AB92F1749C99337028705E6C557537 /* Pods-AHDownloader_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EE64E7CD0B80752A24C962CC242C540 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30757A61C95D68EA3F0EF8F766B2C84 /* Pods-AHDownloader_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B8263717EE5CF4DDA14D18916044516 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6EE104557A203C0067574E5E37E81A /* AHDataTask.swift in Sources */,
+				55FFBF89B7BFB8C54BEC5556283F4CD6 /* AHDataTaskManager.swift in Sources */,
+				6B4EB201C1D9E4CF78180791A2E1F202 /* AHDownloadTool-dummy.m in Sources */,
+				FB4340E699416A57C931745A869D7A92 /* AHFileSizeProbe.swift in Sources */,
+				B1A0A18007D518CD16F49CB8FE77F45D /* AHFileTool.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94C31DDCE4C8FC37E9239D02B71DA092 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C05B513BB2FFAE356CC695AB4F063D48 /* Pods-AHDownloader_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4AF10816F42A87A4A0A3AE73983C460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B835E6C031F49FAD04D60FF45AFF7F5 /* AHDownloader-dummy.m in Sources */,
+				30CB6A76261C11165B115D22539D2C66 /* AHFMDownloader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C87D22619185F6ADFAB7CD1CD119B9F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AHDownloader;
+			target = 7BE4BF7D44C741CC43FDE1FB7CF9CD35 /* AHDownloader */;
+			targetProxy = 405AACBD7ECC0BBB770348AB32CE7167 /* PBXContainerItemProxy */;
+		};
+		E66A4D008FCF0B2C1FA5A9B132AF70ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AHDownloadTool;
+			target = F1ECD7AC665E478DD61ED81B49C0983B /* AHDownloadTool */;
+			targetProxy = F74A71523EF0732762A6D8D5EA0288E6 /* PBXContainerItemProxy */;
+		};
+		EB8CAABF3ACC32B6FE95E9FA29B20AD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AHDownloadTool;
+			target = F1ECD7AC665E478DD61ED81B49C0983B /* AHDownloadTool */;
+			targetProxy = 74771B3334B1E9C3CEF544F328753F38 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D9763FB4CE30529A0CBBF6920D5414A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF81F1BB778BB9AAD90D6BCAFC7D062B /* AHDownloader.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AHDownloader/AHDownloader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AHDownloader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AHDownloader/AHDownloader.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AHDownloader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		411F7AE37D98907DD87014A8F30523C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C0D6F69A93D136200E96A2BE417FC9 /* Pods-AHDownloader_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AHDownloader_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AHDownloader_Tests/Pods-AHDownloader_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AHDownloader_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4BA9EC98A0758CEDBBC7E88A4C5840BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 528694EE252C70F72790EEE66810A791 /* AHDownloadTool.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AHDownloadTool/AHDownloadTool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AHDownloadTool/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AHDownloadTool/AHDownloadTool.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AHDownloadTool;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5816E0BF28FF0189909096F9532CF9F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 528694EE252C70F72790EEE66810A791 /* AHDownloadTool.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AHDownloadTool/AHDownloadTool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AHDownloadTool/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AHDownloadTool/AHDownloadTool.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AHDownloadTool;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5B16CB4840E5528E943EF63C4155B8C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CC71D9F2EACD48F705D3A2BAD1A0114 /* Pods-AHDownloader_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AHDownloader_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AHDownloader_Tests/Pods-AHDownloader_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AHDownloader_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91EBECCA7DF9E3AB20337DD9D286FA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF81F1BB778BB9AAD90D6BCAFC7D062B /* AHDownloader.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AHDownloader/AHDownloader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AHDownloader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AHDownloader/AHDownloader.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AHDownloader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		94F785D650AD78F1D5D4C383C138A564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 700EF2F3A6C5548F075E8BE02BEB680C /* Pods-AHDownloader_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AHDownloader_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AHDownloader_Example/Pods-AHDownloader_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AHDownloader_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CD89A0A512A0468DD736B62DA3D89EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15ACD5D958844C01C3968A6D7FA5733 /* Pods-AHDownloader_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AHDownloader_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AHDownloader_Example/Pods-AHDownloader_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AHDownloader_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */,
+				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E8DC7D754405A2E05101A81CCD02CE1 /* Build configuration list for PBXNativeTarget "Pods-AHDownloader_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD89A0A512A0468DD736B62DA3D89EF7 /* Debug */,
+				94F785D650AD78F1D5D4C383C138A564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B53DB10D0A64BB8079B3763606990A5E /* Build configuration list for PBXNativeTarget "AHDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91EBECCA7DF9E3AB20337DD9D286FA2E /* Debug */,
+				1D9763FB4CE30529A0CBBF6920D5414A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB000F7C17F7E814988B8CB3B4911EB8 /* Build configuration list for PBXNativeTarget "AHDownloadTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5816E0BF28FF0189909096F9532CF9F1 /* Debug */,
+				4BA9EC98A0758CEDBBC7E88A4C5840BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE1A176D895E22F70B66F80CFBF1914C /* Build configuration list for PBXNativeTarget "Pods-AHDownloader_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B16CB4840E5528E943EF63C4155B8C9 /* Debug */,
+				411F7AE37D98907DD87014A8F30523C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
