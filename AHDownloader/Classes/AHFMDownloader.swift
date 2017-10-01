@@ -111,6 +111,11 @@ public class AHDownloader {
         }
     }
     
+    public static func getState(_ urlStr: String) -> AHDataTaskState {
+        return AHDataTaskManager.getState(urlStr)
+    }
+    
+    
     /// Delete unfinishFiles for currently downloading yet unfinished tasks.
     /// Will cancel tasks first.
     public static func deleteUnfinishedTasks(_ urls: [String], _ completion:(()->Void)? ) {
@@ -140,14 +145,7 @@ public class AHDownloader {
         }
     }
     
-    public static func hasTask(_ url: String) -> Bool {
-        return AHDataTaskManager.hasTask(url)
-    }
     
-    // Is this task acutally paused but still in the download stack?
-    public static func isTaskPaused(_ url: String) -> Bool {
-        return AHDataTaskManager.isTaskPaused(url)
-    }
     
     
     /// Return the task's unfinishedFilePath
@@ -161,9 +159,11 @@ public class AHDownloader {
         
         AHDataTaskManager.donwload(fileName: fileName, url: url, fileSizeCallback: { (fileSize) in
             self.checkDelegateContainers()
+            
             let tempPath = AHDataTaskManager.getTaskTempFilePath(url)
             let size = Int(fileSize)
             for container in self.delegateContainers {
+                container.delegate?.downloaderDidStartDownload(url: url)
                 container.delegate?.downloaderDidUpdate(url: url, fileSize: size)
                 
                 if tempPath != nil {
@@ -192,9 +192,7 @@ public class AHDownloader {
             }
         }
         
-        for container in self.delegateContainers {
-            container.delegate?.downloaderDidStartDownload(url: url)
-        }
+        
     }
     
     public static func pause(url: String) {
