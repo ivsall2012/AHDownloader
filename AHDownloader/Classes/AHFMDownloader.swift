@@ -115,6 +115,9 @@ public class AHDownloader {
         return AHDataTaskManager.getState(urlStr)
     }
     
+    public static func getCurrentTaskURLs() -> [String] {
+        return AHDataTaskManager.getCurrentTaskURLs()
+    }
     
     /// Delete unfinishFiles for currently downloading yet unfinished tasks.
     /// Will cancel tasks first.

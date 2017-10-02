@@ -32,23 +32,17 @@ public class AHDataTaskManager: NSObject {
 }
 
 public extension AHDataTaskManager {
-    /// If it has the task, but not downloading, thhis means the task is pending.
-    public static func hasTask(_ urlStr: String) -> Bool{
-        if let _ = dataTaskDict[urlStr] {
-            return true
-        }else{
-            return false
-        }
-        
+    public static func getCurrentTaskURLs() -> [String] {
+        return dataTaskDict.keys.map({ (str) -> String in
+            return str
+        })
     }
     
-    /// Is this task acutally paused but still in the download stack?
-    /// Will return false when there's no such task.
-    public static func isTaskPaused(_ urlStr: String) -> Bool{
+    public static func getState(_ urlStr: String) -> AHDataTaskState {
         if let task = dataTaskDict[urlStr] {
-            return task.state == .pausing
+            return task.state
         }else{
-            return false
+            return AHDataTaskState.notStarted
         }
     }
     
@@ -82,14 +76,14 @@ public extension AHDataTaskManager {
                 dataTask?.donwload(url: url, fileSizeCallback: fileSizeCallback, progressCallback: progressCallback, successCallback: { (path) in
                     
                     DispatchQueue.main.async {
-                        self.dataTaskDict.removeValue(forKey: url)
                         successCallback?(path)
+                        self.dataTaskDict.removeValue(forKey: url)
                     }
                 
                 }, failureCallback: { (error) in
                     DispatchQueue.main.async {
-                        self.dataTaskDict.removeValue(forKey: url)
                         failureCallback?(error)
+                        self.dataTaskDict.removeValue(forKey: url)
                     }
                 })
                 

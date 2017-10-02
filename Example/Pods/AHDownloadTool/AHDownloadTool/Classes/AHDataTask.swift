@@ -34,7 +34,7 @@ public class AHDataTask: NSObject {
     fileprivate var session: URLSession?
     fileprivate weak var task: URLSessionDataTask?
     
-    
+
     fileprivate static var delegateQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.name = AHDataTaskDownloadQueueName
@@ -49,8 +49,15 @@ public class AHDataTask: NSObject {
     public var cacheDir: String?
     public var fileName: String?
     public var fileTempPath: String? {
-        if let filePath = self.fileName {
-            return getTempPath(fileName: filePath)
+        if let fileName = self.fileName {
+            return getTempPath(fileName: fileName)
+        }else{
+            return nil
+        }
+    }
+    public var fileCachePath: String? {
+        if let fileName = self.fileName {
+            return getCachePath(fileName: fileName)
         }else{
             return nil
         }
@@ -88,10 +95,10 @@ public class AHDataTask: NSObject {
             
             switch state {
             case .succeeded:
-                guard let cachePath = self.cacheDir else {return}
+                guard let cachePath = self.fileCachePath else {return}
                 
                 queue!.async {
-                    self.successCallback?(cachePath)
+                     self.successCallback?(cachePath)
                 }
                 
             case .failed:
@@ -125,28 +132,27 @@ extension AHDataTask {
             print("startDownload state is still in either downloading or pausing")
             return
         }
-        
-        state = .notStarted
-        
-        let fileName = getName(url: url)
-        cacheDir = getCachePath(fileName: fileName)
-        
-        
-        // A. file is already downloaded in cache dir
-        // 1. notify outside info(localPath, fileSize)
-        if AHFileTool.doesFileExist(filePath: cacheDir!) {
-            state = .succeeded
+        guard let tempPath = self.fileTempPath, let cachePath = self.fileCachePath else {
+            print("tempPath or cachePath is nil")
             return
         }
         
+        state = .notStarted
         
-        tempDir = getTempPath(fileName: fileName)
+        
+        // A. file is already downloaded in cache dir
+            // 1. notify outside info(localPath, fileSize)
+        if AHFileTool.doesFileExist(filePath: cachePath) {
+            state = .succeeded
+            return
+        }
+
         
         // B. check tempPath
         //    1. file is in tempPath, start download from fileSize
         //    2. file is not in tempPath, start download from 0
-        if AHFileTool.doesFileExist(filePath: tempDir!) {
-            offsetSize = AHFileTool.fileSize(filePath: tempDir!)
+        if AHFileTool.doesFileExist(filePath: tempPath) {
+            offsetSize = AHFileTool.fileSize(filePath: tempPath)
         }else{
             print("start download from 0")
             offsetSize = 0
@@ -183,7 +189,7 @@ extension AHDataTask {
         task?.suspend()
     }
     
-    
+
     public func cancel() {
         guard state == .downloading || state == .pausing else {
             print("cancel state is not in downloading or pausing")
@@ -195,8 +201,8 @@ extension AHDataTask {
         session = nil
         
         
-        //        let path = getTempPath(fileName: fileName!)
-        //        AHFileTool.remove(filePath: path)
+//        let path = getTempPath(fileName: fileName!)
+//        AHFileTool.remove(filePath: path)
     }
     
 }
@@ -249,7 +255,7 @@ extension AHDataTask {
         var request = URLRequest(url: url, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: timeout)
         // if offset is 0, "Content-Range" would not appear in the response
         request.setValue("bytes=\(offsetSize)-", forHTTPHeaderField: "Range")
-        
+
         task = session?.dataTask(with: request)
         
         resume()
@@ -280,15 +286,20 @@ extension AHDataTask {
     }
     
     fileprivate func getTempPath(fileName: String) -> String{
-        let tempDir = self.tempDir == nil ? NSTemporaryDirectory() : self.tempDir!
-        let temp = (tempDir as NSString).appendingPathComponent(fileName)
+        if self.tempDir == nil {
+            self.tempDir = NSTemporaryDirectory()
+        }
+        let temp = (self.tempDir! as NSString).appendingPathComponent(fileName)
         return temp
         
     }
     
     fileprivate func getCachePath(fileName: String) -> String {
-        let cacheDir = self.cacheDir == nil ? NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first! : self.cacheDir!
-        let cachePath = (cacheDir as NSString).appendingPathComponent(fileName)
+        if self.cacheDir == nil {
+            self.cacheDir = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
+        }
+
+        let cachePath = (self.cacheDir! as NSString).appendingPathComponent(fileName)
         return cachePath
     }
     
@@ -335,11 +346,11 @@ extension AHDataTask: URLSessionDataDelegate {
         //  4.3.1 create and open OutputStream
         //  4.3.2 resume download from currentSize
         
-        guard let cachePath = self.cacheDir,
-            let tempPath = self.tempDir else {
-                print("didReceive response: no cachePath or tempPath")
-                completionHandler(.cancel)
-                return
+        guard let cachePath = self.fileCachePath,
+              let tempPath = self.fileTempPath else {
+            print("didReceive response: no cachePath or tempPath")
+            completionHandler(.cancel)
+            return
         }
         
         
@@ -393,8 +404,8 @@ extension AHDataTask: URLSessionDataDelegate {
     }
     
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?){
-        guard let cachePath = self.cacheDir,
-            let tempPath = self.tempDir else {
+        guard let cachePath = self.fileCachePath,
+            let tempPath = self.fileTempPath else {
                 state = .failed
                 return
         }
