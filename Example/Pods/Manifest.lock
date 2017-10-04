@@ -1,7 +1,7 @@
 PODS:
-  - AHDownloader (0.1.4):
+  - AHDownloader (0.1.6):
     - AHDownloadTool
-  - AHDownloadTool (0.1.8)
+  - AHDownloadTool (0.1.10)
 
 DEPENDENCIES:
   - AHDownloader (from `../`)
@@ -11,8 +11,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AHDownloader: f7e2fa52734871341140bdefb113ca5ab3f82184
-  AHDownloadTool: ab7352e4fb502d8cdd629d7a6556bd0643e957d0
+  AHDownloader: a8480f205ef84d109dcf8764b7d6c39af78c9f08
+  AHDownloadTool: d942add9da4ab4f87f82d3d63bb194a5631e9bb0
 
 PODFILE CHECKSUM: d4263254c7663fb1ebe5e481ea6ef4617eb02ddf
 

@@ -73,7 +73,13 @@ public class AHDataTask: NSObject {
     // Callbacks
     fileprivate var fileSizeCallback: ((_ fileSize: UInt64) -> Void)?
     fileprivate var progressCallback: ((_ progress: Double) -> Void)?
-    fileprivate var successCallback: ((_ filePath: String) -> Void)?
+    fileprivate var successCallback: ((_ filePath: String) -> Void)? {
+        didSet {
+            if successCallback == nil {
+                print("successCallback == nil")
+            }
+        }
+    }
     fileprivate var failureCallback: ((_ error: Error?) -> Void)?
     
     
@@ -81,11 +87,7 @@ public class AHDataTask: NSObject {
     // It is not nil, when there's an error in the current task.
     fileprivate var currentError: Error? = nil
     
-    fileprivate(set) var progress: Double = 0.0 {
-        didSet {
-            // should not call progressCallback here because when reset(), the callback will be called too, we don't want that. We need a stream line of progresses.
-        }
-    }
+    fileprivate(set) var progress: Double = 0.0
     fileprivate(set) var state = AHDataTaskState.notStarted {
         didSet {
             var queue: DispatchQueue? = nil
@@ -195,14 +197,11 @@ extension AHDataTask {
             print("cancel state is not in downloading or pausing")
             return
         }
-        // state will be set to failed in delegate method for canceling, as well as reset()
+        // state will be set to failed in delegate method for canceling
         task?.cancel()
         session?.invalidateAndCancel()
         session = nil
         
-        
-//        let path = getTempPath(fileName: fileName!)
-//        AHFileTool.remove(filePath: path)
     }
     
 }
@@ -261,21 +260,7 @@ extension AHDataTask {
         resume()
         
     }
-    
-    /// Called every time in urlSession delegate method didCompleteWithError
-    fileprivate func reset() {
-        outputStream = nil
-        cacheDir = nil
-        tempDir = nil
-        task = nil
-        progress = 0.0
-        
-        fileSizeCallback = nil
-        progressCallback = nil
-        successCallback = nil
-        failureCallback = nil
-        
-    }
+
     
     /// This method's logic should be reconsidered!!!
     fileprivate func getName(url: String) -> String {
@@ -387,10 +372,14 @@ extension AHDataTask: URLSessionDataDelegate {
         outputStream?.write(values, maxLength: data.count)
         offsetSize = offsetSize + UInt64(data.count)
         
-        progress = Double(offsetSize) / Double(totalSize)
+        let newProgress = Double(offsetSize) / Double(totalSize)
+        let secondDigitA = Int(newProgress * 100) % 10
+        let secondDigitB = Int(progress * 100) % 10
+
         
+        progress = newProgress
         
-        if self.progressCallback != nil {
+        if self.progressCallback != nil, secondDigitA != secondDigitB {
             var queue: DispatchQueue? = nil
             if AHDataTask.callBackQueue == nil {
                 queue = DispatchQueue.main
@@ -418,7 +407,6 @@ extension AHDataTask: URLSessionDataDelegate {
             AHFileTool.remove(filePath: tempPath)
         }
         outputStream?.close()
-        reset()
     }
     
 }

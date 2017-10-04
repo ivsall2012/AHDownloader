@@ -32,10 +32,6 @@ public struct AHFileTool {
     
     @discardableResult
     public static func moveItem(atPath: String, toPath: String) -> Bool{
-        guard doesFileExist(filePath: atPath) else {
-            return false
-        }
-        
         
         do {
            try FileManager.default.moveItem(atPath: atPath, toPath: toPath)
@@ -49,10 +45,6 @@ public struct AHFileTool {
     
     @discardableResult
     public static func remove(filePath: String) -> Bool {
-        guard doesFileExist(filePath: filePath) else {
-            return false
-        }
-        
         
         do {
             try FileManager.default.removeItem(atPath: filePath)
