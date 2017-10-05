@@ -11,7 +11,7 @@ import AHDownloadTool
 
 struct DelegateContainer: Equatable {
     weak var delegate: AHDownloaderDelegate?
-    
+
     public static func ==(lhs: DelegateContainer, rhs: DelegateContainer) -> Bool {
         return lhs.delegate === rhs.delegate
     }
@@ -78,7 +78,7 @@ public class AHDownloader {
     public static var tempDir: String?
     public static var cacheDir: String?
     
-    fileprivate static var delegateContainers = [DelegateContainer]()
+    fileprivate static var delegateDict = [String: DelegateContainer]()
 
     /// [url: DownloadTask]
     fileprivate static var taskDict = [String: DownloadTask]()
@@ -89,17 +89,24 @@ public class AHDownloader {
     public static func addDelegate(_ delegate: AHDownloaderDelegate) {
         // make sure all the addings are in in queue for thread safity.
         DispatchQueue.main.async {
-//            self.checkDelegateContainers()
-            for i in 0..<self.delegateContainers.count {
-                let delegateContainer = self.delegateContainers[i]
+            var neededToDelete = [String]()
+            for (offset: _, element: (key: uuid, value: delegateContainer)) in self.delegateDict.enumerated() {
+
                 if delegateContainer.delegate === delegate {
                     // duplicate
                     return
                 }
+                if delegateContainer.delegate == nil {
+                    neededToDelete.append(uuid)
+                }
             }
             
+            for i in neededToDelete {
+                self.delegateDict.removeValue(forKey: i)
+            }
+            let uuid = UUID().uuidString
             let container = DelegateContainer(delegate: delegate)
-            self.delegateContainers.append(container)
+            self.delegateDict[uuid] = container
         }
     }
     
@@ -130,7 +137,7 @@ public class AHDownloader {
             
             // Main thread to send notifications, the receiver will be at main too.
             DispatchQueue.main.async {
-                for container in self.delegateContainers {
+                for container in self.delegateDict.values {
                     container.delegate?.downloaderDeletedUnfinishedTaskFiles(urls: urls)
                 }
                 
@@ -146,7 +153,7 @@ public class AHDownloader {
     /// Return the task's unfinishedFilePath
     public static func download(_ url: String){
 
-        for container in self.delegateContainers {
+        for container in self.delegateDict.values {
             container.delegate?.downloaderWillStartDownload(url: url)
         }
         
@@ -155,7 +162,6 @@ public class AHDownloader {
         self.taskDict[url] = downloadTask
         
         AHDataTaskManager.donwload(fileName: fileName, tempDir: self.tempDir, cachePath: self.cacheDir, url: url, fileSizeCallback: { (fileSize) in
-//            self.checkDelegateContainers()
             
             let tempPath = AHDataTaskManager.getTaskTempFilePath(url)
             let size = Int(fileSize)
@@ -163,7 +169,7 @@ public class AHDownloader {
             self.taskDict[url]?.localFilePath = AHDataTaskManager.getTaskCacheFilePath(url)
             self.taskDict[url]?.unfinishLocalFilePath = tempPath
             
-            for container in self.delegateContainers {
+            for container in self.delegateDict.values {
                 container.delegate?.downloaderDidStartDownload(url: url)
                 container.delegate?.downloaderDidUpdate(url: url, fileSize: size)
                 
@@ -177,13 +183,12 @@ public class AHDownloader {
             
             // not gonna check, since the updating progress will be too frequent.
             // only checkDelegateContainers() when actions required.
-            for container in self.delegateContainers {
+            for container in self.delegateDict.values {
                 container.delegate?.downloaderDidUpdate(url: url, progress: progress)
             }
             
         }, successCallback: { (filePath) in
-//            self.checkDelegateContainers()
-            for container in self.delegateContainers {
+            for container in self.delegateDict.values {
                 container.delegate?.downloaderDidFinishDownload(url: url, localFilePath: filePath)
                 
             }
@@ -191,8 +196,7 @@ public class AHDownloader {
         }) { (error) in
             print("downloadError:\(error!)")
             self.taskDict.removeValue(forKey: url)
-//            self.checkDelegateContainers()
-            for container in self.delegateContainers {
+            for container in self.delegateDict.values {
                 container.delegate?.downloaderDidCancel(url: url)
             }
         }
@@ -202,16 +206,14 @@ public class AHDownloader {
     
     public static func pause(url: String) {
         AHDataTaskManager.pause(url: url)
-//        self.checkDelegateContainers()
-        for container in self.delegateContainers {
+        for container in self.delegateDict.values {
             container.delegate?.downloaderDidPaused(url: url)
         }
         
     }
     public static func pauseAll() {
-        AHDataTaskManager.pauseAll() 
-//        self.checkDelegateContainers()
-        for container in self.delegateContainers {
+        AHDataTaskManager.pauseAll()
+        for container in self.delegateDict.values {
             container.delegate?.downloaderDidPausedAll()
         }
     }
@@ -219,15 +221,13 @@ public class AHDownloader {
     
     public static func resume(url: String) {
         AHDataTaskManager.resume(url: url)
-//        self.checkDelegateContainers()
-        for container in self.delegateContainers {
+        for container in self.delegateDict.values {
             container.delegate?.downloaderDidResume(url: url)
         }
     }
     public static func resumeAll() {
         AHDataTaskManager.resumeAll()
-//        self.checkDelegateContainers()
-        for container in self.delegateContainers {
+        for container in self.delegateDict.values {
             container.delegate?.downloaderDidResumedAll()
         }
     }
@@ -236,9 +236,8 @@ public class AHDownloader {
     
     public static func cancel(url: String) {
         AHDataTaskManager.cancel(url: url)
-//        self.checkDelegateContainers()
         self.taskDict.removeValue(forKey: url)
-        for container in self.delegateContainers {
+        for container in self.delegateDict.values {
             container.delegate?.downloaderDidCancel(url: url)
         }
     }
@@ -246,8 +245,7 @@ public class AHDownloader {
     public static func cancelAll() {
         AHDataTaskManager.cancelAll()
         self.taskDict.removeAll()
-//        self.checkDelegateContainers()
-        for container in self.delegateContainers {
+        for container in self.delegateDict.values {
             container.delegate?.downloaderCancelAll()
         }
     }
@@ -260,7 +258,7 @@ public class AHDownloader {
 extension AHDownloader {
     fileprivate static func getFileName(_ url: String) -> String {
         var name: String?
-        for container in self.delegateContainers {
+        for container in self.delegateDict.values {
             if let theName = container.delegate?.downloaderForFileName(url: url){
                 name = theName
                 break
@@ -273,20 +271,6 @@ extension AHDownloader {
         }
         return name!
     }
-    
-    /// This method will remove nil delegates.
-//    fileprivate static func checkDelegateContainers() {
-//        var neededToRemove = [Int]()
-//        for i in 0..<self.delegateContainers.count {
-//            let delegateContainer = self.delegateContainers[i]
-//            if delegateContainer.delegate == nil {
-//                neededToRemove.append(i)
-//            }
-//        }
-//        for i in neededToRemove {
-//            self.delegateContainers.remove(at: i)
-//        }
-//    }
 }
 
 
