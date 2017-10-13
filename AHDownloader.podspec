@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AHDownloader'
-  s.version          = '0.1.8'
+  s.version          = '0.1.81'
   s.summary          = 'A short description of AHDownloader.'
 
 # This description is used to generate tags and improve search results.
