@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import AHDownloader
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//        AHDownloader.
     }
 
     override func didReceiveMemoryWarning() {
